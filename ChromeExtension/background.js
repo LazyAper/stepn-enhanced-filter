@@ -1,6 +1,7 @@
 const isPageTarget = url => url && url.includes("m.stepn.com")
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tabInfo) => {
+
 	if (!isPageTarget(tabInfo.url) || changeInfo.status !== "complete" || changeInfo.status === "loading") {
 		return
 	}
